@@ -1,0 +1,14 @@
+set appName to "Google chrome"
+tell application "System Events"
+  set frontmostApplicationName to name of 1st process whose frontmost is true
+end tell
+
+if frontmostApplicationName is appName then
+	tell application "System Events"       
+	    keystroke "`" using command down
+	end tell
+else
+	tell application appName
+		activate
+	end tell
+end if
